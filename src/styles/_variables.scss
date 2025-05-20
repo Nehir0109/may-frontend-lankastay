@@ -1,12 +1,53 @@
 // Colors
 $white: #ffffff;
 $black: #000000;
+$primary: #3252DF;
+$green: #1ABC9C;
+$red: #E74C3C;
+
+$title: #152C5B;
+$text: #B0B0B0;
+$text-secondary: #757575;
+$dark-text: #141522;
+
+$light-blue: #EFF4FA;
+$blue: #0095FF;
+$soft-blue: #4A85F6;
+$strong-blue: #003DFC;
+
+$background: #FAFAFA;
+$copyrightBg: #F5F6F8;
+$lightBg: #EDF2F6;
+
+$border: #E5E5E5;
+$light-grey: #F3F3F3;
+$silver: #BFBFBF;
 
 
 // Fonts
+$primary-font: "Poppins", system-ui, sans-serif;
+$secondary-font: 'Inter', sans-serif;
 
 
 // Font Sizes
+$fnt-size-12xl: 3.25rem; /* 52px */
+$fnt-size-11xl: 3rem; /* 48px */
+$fnt-size-10xl: 2.625rem; /* 42px */
+$fnt-size-9xl: 2.5rem; /* 40px */
+$fnt-size-8xl: 2.25rem; /* 36px */
+$fnt-size-7xl: 2rem; /* 32px */
+$fnt-size-6xl: 1.875rem; /* 30px */
+$fnt-size-5xl: 1.75rem; /* 28px */
+$fnt-size-4xl: 1.625rem; /* 26px */
+$fnt-size-3xl: 1.5625rem; /* 25px */
+$fnt-size-2xl: 1.5rem; /* 24px */
+$fnt-size-xl: 1.25rem; /* 20px */
+$fnt-size-l: 1.125rem; /* 18px */
+$fnt-size-md: 1rem; /* 16px */
+$fnt-size-s: 0.9375rem; /* 15px */
+$fnt-size-xs: 0.875rem; /* 14px */
+$fnt-size-2xs: 0.8125rem; /* 13px */
+$fnt-size-3xs: 0.75rem; /* 12px */
 
 
 // Screen Breakpoints
