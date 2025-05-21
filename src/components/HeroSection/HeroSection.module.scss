@@ -1,0 +1,69 @@
+.heroSection{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+h1{
+    font-size: 4rem;
+    color:rgb(31, 31, 78);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    font-size: 1.2rem;
+    margin-top: 30px;
+    color: lightgray;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button{
+    background-color: #0d6efd;
+    padding: 13px 35px;
+    color:white;
+    margin-top: 30px;
+    font-size: large;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.heroStarts{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    margin-top: 50px;
+
+    div{
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem;
+    }
+}
+
+
+.heroImage{
+    position: relative;
+    display: inline-block;
+
+    img{
+        border-radius: 20px;
+        border-top-left-radius: 95px;
+        position: relative;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .heroImageBackground{
+        position: absolute;
+        top: 30px;
+        left: 35px;
+        width: 100%;
+        height: 100%;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 0 2px lightgray; 
+        z-index: 1;
+    }
+}
