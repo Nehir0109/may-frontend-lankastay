@@ -1,0 +1,15 @@
+.treasure-section {
+  padding: 24px;
+}
+
+.treasure-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
