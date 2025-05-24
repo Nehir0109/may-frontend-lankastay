@@ -1,0 +1,29 @@
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 0.5rem;
+  font-family: "Segoe UI", sans-serif;
+  padding: 1rem 0;
+}
+
+.link {
+  color: #6c757d; 
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: #495057;
+  }
+}
+
+.separator {
+  color: #adb5bd; 
+  font-weight: 400;
+}
+
+.current {
+  font-weight: 600;
+  color: #212529; 
+  text-transform: capitalize;
+}
