@@ -4,9 +4,9 @@
    align-items: center;
 }
 
-h1{
-    font-size: 4rem;
-    color:rgb(31, 31, 78);
+.heroTitle{
+    font-size: 3.5rem;
+    color: #143f80;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -40,6 +40,17 @@ button{
       flex-direction: column;
       font-size: 1.2rem;
     }
+
+    img{
+        width: 32px;
+        height: 32px;
+        
+        
+    }
+
+    span{
+       margin-top: 10px;
+    }
 }
 
 
@@ -66,4 +77,55 @@ button{
         box-shadow: 0 0 0 2px lightgray; 
         z-index: 1;
     }
+}
+
+
+@media (max-width: 1200px) {
+  .heroSection {
+    padding: 3rem 4rem;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .heroSection {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .heroImage {
+    margin-top: 2rem;
+    order: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+
+  .heroContent p {
+    font-size: 1rem;
+  }
+
+  .heroContent .heroButton {
+    width: 100%;
+  }
+
+  .heroContent .heroStats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroImage img {
+    max-width: 100%;
+  }
 }
