@@ -2,12 +2,16 @@
    display: flex;
    justify-content: space-around;
    align-items: center;
+   max-width: 1142px;
+   width: 100%;
+   margin: 0 auto;
 }
 
 .heroTitle{
     font-size: 3.5rem;
     color: #143f80;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 p{
@@ -92,15 +96,17 @@ button{
     flex-direction: column;
     padding: 2rem;
     text-align: center;
+    gap:4rem;
   }
+
 
   .heroContent {
     max-width: 100%;
     order: 2;
+
   }
 
   .heroImage {
-    margin-top: 2rem;
     order: 1;
   }
 }
