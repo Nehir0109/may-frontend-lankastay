@@ -1,7 +1,7 @@
-import React, { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import "./styles/global.scss";
 
 
