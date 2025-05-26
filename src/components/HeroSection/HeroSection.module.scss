@@ -8,7 +8,7 @@
 }
 
 .heroTitle{
-    font-size: 3.5rem;
+    font-size: clamp(1.5rem, 4vw, 3.5rem);
     color: #143f80;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
@@ -111,9 +111,6 @@ button{
 }
 
 @media (max-width: 768px) {
-  .heroContent h1 {
-    font-size: clamp(3.5rem, 5vw, 4rem);
-  }
 
   .heroContent .heroStarts {
     display: flex;
