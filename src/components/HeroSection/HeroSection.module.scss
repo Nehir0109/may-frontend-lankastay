@@ -103,7 +103,6 @@ button{
   .heroContent {
     max-width: 100%;
     order: 2;
-
   }
 
   .heroImage {
@@ -113,20 +112,16 @@ button{
 
 @media (max-width: 768px) {
   .heroContent h1 {
-    font-size: 2rem;
+    font-size: clamp(3.5rem, 5vw, 4rem);
   }
 
-  .heroContent p {
-    font-size: 1rem;
-  }
-
-  .heroContent .heroButton {
-    width: 100%;
-  }
-
-  .heroContent .heroStats {
-    flex-direction: column;
+  .heroContent .heroStarts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     gap: 1.5rem;
+    
   }
 }
 

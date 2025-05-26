@@ -8,37 +8,69 @@ import users from "../../assets/HeroSection/users.svg";
 
 
 const HeroSection = () => {
+  
+
+     const heroData = {
+        title: "Forget Busy Work,\nStart Next Vacation",
+        description:
+          "We provide what you need to enjoy your holiday with family. || Time to make another memorable moments.",
+        buttonText: "Show More",
+        stats: [
+          {
+            icon: users,
+            label: "2500 Users",
+            alt: "users"
+          },
+          {
+            icon: treasure,
+            label: "200 Treasure",
+            alt: "treasure"
+          },
+          {
+            icon: cities,
+            label: "100 Cities",
+            alt: "cities"
+          }
+        ],
+        image: roomImage
+      };
+
+
+
   return (
     <section className={styles.heroSection}>
          <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>Forget Busy Work, <br/> Start Next Vacation</h1>
-            <p>We provide what you need to enjoy your <br/>
-                holiday with family. 
-                Time to make another <br/>
-                 memorable moments.</p>
-
-                 <button className={styles.heroButton}>Show More</button>
+            <h1 className={styles.heroTitle}>
+              {heroData.title.split("\n").map((line, i)=> (
+                <React.Fragment key={i}>
+                {line}
+                <br />
+                </React.Fragment>
+              ))}
+            </h1>
+            <p>{heroData.description.split("||").map((line, i)=>(
+              <React.Fragment key={i}>
+                {line}
+                <br/>
+              </React.Fragment>
+            ))}
+              </p>
+                 <button className={styles.heroButton}>{heroData.buttonText}</button>
          
        
          <div className={styles.heroStarts}>
-          <div className={styles.users}>
-            <img src={users} alt="users" />
-            <span>2500 Users</span>
-          </div>
-          <div className={styles.treasure}>
-            <img src={treasure} alt="treasure" />
-            <span>200 Treasure</span>
-          </div>
-          <div className={styles.cities}>
-            <img src={cities} alt="cities" />
-            <span>100 Cities</span>
-          </div>
+          {heroData.stats.map((item, i)=> (
+            <div key={i}>
+              <img src={item.icon} alt={item.alt}/>
+              <span>{item.label}</span>
+            </div>
+          ))}
          </div>
          </div>
 
          <div className={styles.heroImage}>
             <div className={styles.heroImageBackground}></div>
-            <img src={roomImage} alt="Vacation Room" />
+            <img src={heroData.image} alt="Vacation Room" />
          </div>
     </section>
     
