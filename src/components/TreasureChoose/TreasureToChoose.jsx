@@ -1,5 +1,5 @@
 import React from 'react';
-import ChoiceCard from './ChoiceCard';
+import ChoiceCard from '../TreasureCard/ChoiceCard.jsx';
 import './TreasureToChoose.scss';
 
 const TreasureToChoose = ({ choices }) => {
