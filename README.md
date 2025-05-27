@@ -40,4 +40,66 @@
 
 ## API Notları:
 
-İlerleyen zamandalarda doldurulacaktır.
+Otel verilerini almak için aşağıdaki MockAPI endpoint’i kullanılır:
+
+https://6829efb0ab2b5004cb3543e3.mockapi.io/api/v1/hotels
+Bu endpoint’e GET isteği göndererek otellerin tüm bilgilerine ulaşabilirsiniz. Dönen veri bir dizi (array) şeklindedir ve her bir otel aşağıdaki gibi detaylı bir nesne (object) olarak gelir:
+{
+"name": "Blue Origin Fams",
+"city": "Galle",
+"country": "Sri Lanka",
+"coverImage": "https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/hotels/blue-origin-fams-cover.png",
+"gallery": [
+"https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/hotels/blue-origin-fams-int-1.jpg",
+"https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/hotels/blue-origin-fams-int-2.jpg"
+],
+"price": 267,
+"rating": 3.4,
+"description": "A cozy beachfront hotel with modern amenities and a stunning view of the Indian Ocean. Guests can enjoy nearby attractions, authentic cuisine, and relaxing environments. Every stay is crafted to ensure peace and comfort.",
+"features": {
+"bedroom": 3,
+"livingRoom": 1,
+"bathroom": 1,
+"internet": "50 mbps/s",
+"television": 2,
+"refrigerator": 1,
+"unitReady": 10
+},
+"treasures": [
+{
+"title": "Green Lake",
+"type": "Nature",
+"image": "https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/treasures/green-lake.png",
+"popular": true
+},
+{
+"title": "Snorkeling",
+"type": "Beach",
+"image": "https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/treasures/snorkeling.png",
+"popular": false
+}
+],
+"id": "1"
+}
+Alan Açıklamaları
+• name: Otelin adı
+• city ve country: Otelin bulunduğu şehir ve ülke
+• coverImage: Otelin kapak fotoğrafı (URL)
+• gallery: Otelin iç ve dış mekan görselleri (dizi halinde URL’ler)
+• price: Gecelik fiyat (USD)
+• rating: Otelin kullanıcı puanı (0-5 arası)
+• description: Otel açıklaması (kısa tanıtım metni)
+• features:
+• bedroom: Yatak odası sayısı
+• livingRoom: Salon sayısı
+• bathroom: Banyo sayısı
+• internet: İnternet hızı veya türü
+• television: Televizyon sayısı
+• refrigerator: Buzdolabı sayısı
+• unitReady: Kullanıma hazır birim/adet
+• treasures: Otelin yakınındaki önemli/doğal/aktivite mekanları
+• title: Mekan veya aktivite adı
+• type: Türü (ör. Nature, Beach, Shopping, Pool)
+• image: İlgili yerin görseli (URL)
+• popular: Popülerlik durumu (true/false)
+• id: Otelin benzersiz ID’si
