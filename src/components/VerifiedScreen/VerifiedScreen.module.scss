@@ -1,0 +1,66 @@
+@import "../../styles/variables.scss";
+
+.wrapper {
+  background-image: url(public/images/verifiedScreen.svg);
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $secondary-font;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 1rem;
+  padding: 4rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  max-width: $desktop-m;
+  height: 600px;
+  width: 100%;
+  border: 1px solid #93c5fd;
+}
+
+.logo {
+  font-size: 3.25rem;
+  color: #2563eb;
+  margin-bottom: 40px;
+
+  span:first-child {
+    color: #3b82f6;
+  }
+
+  span:last-child {
+    color: #1f2937;
+  }
+}
+
+.checkmark {
+  font-size: 3.75rem;
+  margin-bottom: 50px;
+}
+
+.text {
+  font-size: $fnt-size-9xl;
+  font-weight: 500;
+  color: $strong-blue;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  background-color: $strong-blue;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: $fnt-size-2xl;
+  transition: background-color 0.3s;
+  width: 500px;
+  height: 80px;
+  margin-top: 50px;
+
+  &:hover {
+    background-color: $blue;
+  }
+}
