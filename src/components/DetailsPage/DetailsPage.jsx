@@ -34,7 +34,7 @@ const choices = [
     },
 ];
 
-const Index = () => {
+const DetailsPage = () => {
     return (
         <div style={{ padding: "40px" }}>
             <TreasureToChoose choices={choices} />
@@ -42,4 +42,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default DetailsPage;

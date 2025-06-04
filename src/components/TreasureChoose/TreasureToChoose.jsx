@@ -1,12 +1,12 @@
 import React from 'react';
 import ChoiceCard from '../TreasureCard/ChoiceCard.jsx';
-import './TreasureToChoose.scss';
+import styles from './TreasureToChoose.module.scss';
 
 const TreasureToChoose = ({ choices }) => {
     return (
-        <section className="treasure-section">
-            <h2 className="treasure-title">Treasure to Choose</h2>
-            <div className="card-grid">
+        <section className={styles["treasure-section"]}>
+            <h2 className={styles["treasure-title"]}>Treasure to Choose</h2>
+            <div className={styles["card-grid"]}>
                 {choices.map((choice, index) => (
                     <ChoiceCard
                         key={index}

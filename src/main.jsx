@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./components/Home";
 import "./styles/global.scss";
-import DetailsPage from "./components/DetailsPage/index.jsx";
+import DetailsPage from "./components/DetailsPage/DetailsPage.jsx";
 
 // React Router route yapısının kurgulanacağı kısımdır.
 //  Detaylı bilgi için https://reactrouter.com/start/data/installation
