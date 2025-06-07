@@ -40,48 +40,20 @@
 
 ## API Notları:
 
-Otel verilerini almak için aşağıdaki MockAPI endpoint’i kullanılır:
+Otel verileri, projede hazır bulunan useData adlı custom hook aracılığıyla SWR kullanılarak çekilmektedir.
+Hook içinde MockAPI’deki temel URL (baseURL) sabit olarak tanımlanmıştır. Bu sayede sadece endpoint adı verilerek veri çekmek mümkündür.
 
-https://6829efb0ab2b5004cb3543e3.mockapi.io/api/v1/hotels
-Bu endpoint’e GET isteği göndererek otellerin tüm bilgilerine ulaşabilirsiniz. Dönen veri bir dizi (array) şeklindedir ve her bir otel aşağıdaki gibi detaylı bir nesne (object) olarak gelir:
-{
-"name": "Blue Origin Fams",
-"city": "Galle",
-"country": "Sri Lanka",
-"coverImage": "https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/hotels/blue-origin-fams-cover.png",
-"gallery": [
-"https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/hotels/blue-origin-fams-int-1.jpg",
-"https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/hotels/blue-origin-fams-int-2.jpg"
-],
-"price": 267,
-"rating": 3.4,
-"description": "A cozy beachfront hotel with modern amenities and a stunning view of the Indian Ocean. Guests can enjoy nearby attractions, authentic cuisine, and relaxing environments. Every stay is crafted to ensure peace and comfort.",
-"features": {
-"bedroom": 3,
-"livingRoom": 1,
-"bathroom": 1,
-"internet": "50 mbps/s",
-"television": 2,
-"refrigerator": 1,
-"unitReady": 10
-},
-"treasures": [
-{
-"title": "Green Lake",
-"type": "Nature",
-"image": "https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/treasures/green-lake.png",
-"popular": true
-},
-{
-"title": "Snorkeling",
-"type": "Beach",
-"image": "https://agaparwxrjnkmqfglytl.supabase.co/storage/v1/object/public/lankastay/treasures/snorkeling.png",
-"popular": false
-}
-],
-"id": "1"
-}
-Alan Açıklamaları
+```js
+import useData from "@/hooks/useData";
+const { data, loading, error } = useData("hotels");
+```
+
+Bu kullanımda:
+• useData otomatik olarak https://.../api/v1/hotels adresine istek gönderir.
+• Gelen veriler localStorage’a kaydedilir.
+• Sayfa yenilense bile, varsa veri önce localStorage’dan alınır; ardından arka planda güncel veri çekilir.
+
+Dönen veri yapısı şu alanları içerir:
 • name: Otelin adı
 • city ve country: Otelin bulunduğu şehir ve ülke
 • coverImage: Otelin kapak fotoğrafı (URL)
