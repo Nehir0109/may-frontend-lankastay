@@ -64,3 +64,30 @@
     background-color: $blue;
   }
 }
+
+@media (max-width: $desktop-m) {
+  .card {
+    width: 90%;
+    height: auto;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .checkmark {
+    font-size: 3rem;
+  }
+
+  .text {
+    font-size: $fnt-size-6xl;
+  }
+
+  .button {
+    width: 75%;
+    height: auto;
+    padding: 0.75rem;
+    font-size: $fnt-size-2xl;
+  }
+}
