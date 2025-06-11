@@ -1,5 +1,3 @@
-import useData from "../../hooks/useData";
-
 const Home = () => {
   return (
     <>
