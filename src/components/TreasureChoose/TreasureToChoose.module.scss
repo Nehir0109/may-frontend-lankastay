@@ -1,12 +1,15 @@
+@import '../../styles/variables.scss';
+
 .treasure-section {
   padding: 24px;
-  max-width: 1139px;
+  max-width: $desktop-m;
   width: 100%;
   margin: 0 auto;
+  font-family: $primary-font;
 }
 
 .treasure-title {
-  font-size: 24px;
+  font-size: $fnt-size-2xl;
   font-weight: 600;
   margin-bottom: 20px;
 }
@@ -15,4 +18,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+}
+
+@media screen and (max-width: 587px) {
+  .treasure-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }

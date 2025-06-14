@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     Component: Home,
   },
   {
-    path: "/Details",
+    path: "/details",
     Component: DetailsPage,
   }
 ]);
