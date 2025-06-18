@@ -11,10 +11,6 @@ const router = createBrowserRouter([
     path: "/",
     Component: Home,
   },
-    {
-     path: "/verified",
-     Component: VerifiedScreen,
-    },
 ]);
 
 createRoot(document.getElementById("root")).render(
