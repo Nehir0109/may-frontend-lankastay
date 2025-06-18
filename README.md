@@ -40,4 +40,38 @@
 
 ## API Notları:
 
-İlerleyen zamandalarda doldurulacaktır.
+Otel verileri, projede hazır bulunan useData adlı custom hook aracılığıyla SWR kullanılarak çekilmektedir.
+Hook içinde MockAPI’deki temel URL (baseURL) sabit olarak tanımlanmıştır. Bu sayede sadece endpoint adı verilerek veri çekmek mümkündür.
+
+```js
+import useData from "@/hooks/useData";
+const { data, loading, error } = useData("hotels");
+```
+
+Bu kullanımda:
+• useData otomatik olarak https://.../api/v1/hotels adresine istek gönderir.
+• Gelen veriler localStorage’a kaydedilir.
+• Sayfa yenilense bile, varsa veri önce localStorage’dan alınır; ardından arka planda güncel veri çekilir.
+
+Dönen veri yapısı şu alanları içerir:
+• name: Otelin adı
+• city ve country: Otelin bulunduğu şehir ve ülke
+• coverImage: Otelin kapak fotoğrafı (URL)
+• gallery: Otelin iç ve dış mekan görselleri (dizi halinde URL’ler)
+• price: Gecelik fiyat (USD)
+• rating: Otelin kullanıcı puanı (0-5 arası)
+• description: Otel açıklaması (kısa tanıtım metni)
+• features:
+• bedroom: Yatak odası sayısı
+• livingRoom: Salon sayısı
+• bathroom: Banyo sayısı
+• internet: İnternet hızı veya türü
+• television: Televizyon sayısı
+• refrigerator: Buzdolabı sayısı
+• unitReady: Kullanıma hazır birim/adet
+• treasures: Otelin yakınındaki önemli/doğal/aktivite mekanları
+• title: Mekan veya aktivite adı
+• type: Türü (ör. Nature, Beach, Shopping, Pool)
+• image: İlgili yerin görseli (URL)
+• popular: Popülerlik durumu (true/false)
+• id: Otelin benzersiz ID’si
