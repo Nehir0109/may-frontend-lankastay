@@ -15,9 +15,9 @@ const TreasureToChoose = ({ choices }) => {
 
 
     return (
-        <section className={styles["treasure-section"]}>
-            <h2 className={styles["treasure-title"]}>Treasure to Choose</h2>
-            <div className={styles["card-grid"]}>
+        <section className={styles.treasureSection}>
+            <h2 className={styles.treasureTitle}>Treasure to Choose</h2>
+            <div className={styles.cardGrid}>
                 {choices.map((choice, index) => (
                     <ChoiceCard
                         key={index}
