@@ -1,0 +1,140 @@
+
+.container{
+
+    max-width: 1150px;
+    height: 117px;
+    background-color: #EAF1FF;
+    border: 1px solid #EAF1FF;
+    border-radius: 42px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+  
+    img{
+    width: 24px;
+    height: 24px;
+    
+    }
+  input{
+    outline: none;
+  }
+    p {
+    margin-top: 3px;
+    }
+    option , select {
+      color: #1E1E1E;
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .left {
+    display: flex;
+    justify-content: space-evenly;
+    width: clamp(320px, 95vw, 704px);
+    margin: auto;
+
+    .wrapper{
+      position: relative;
+      .location{
+        position: absolute;
+       
+      }
+    }
+    .errors{
+      position: relative;
+    }
+     .error{
+          color: red;
+          text-align: center;
+          margin: 5px;
+          position: absolute;
+          left: 20px;
+        }
+      
+      .check , .select , .center {
+     
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        gap: 10px;
+       color: #1E1E1E;
+       font-weight: 600;
+       font-size: 16px;
+        width: 190px;
+        padding: 15px;
+        background-color: #ffff;
+        border-radius: 13px;
+
+      
+        }
+      
+       .center{
+
+        .person{
+            border: none;
+        }
+       } 
+    }
+
+    .right{
+     margin: auto;
+     padding: 14px;
+     width: 190px;
+     text-align: center;
+     background-color: #3252DF;
+     border-radius: 13px;
+     color: #ffff;
+     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    }
+}
+
+@media (max-width:790px){
+.container{
+  display: grid;
+  grid-template-columns: auto;
+  height: 143px;
+.error{
+          top: -85px;
+        }
+  
+}
+}
+
+@media (max-width:650px){
+.container{
+display: grid;
+grid-template-columns: auto auto;
+height: 280px;
+
+  .left{
+  display: flex;
+  flex-direction: column;
+  width: 250px; 
+  row-gap: 16px;
+  .check , .select , .center {
+    margin-bottom: 10px;
+  }
+}
+.error{
+     margin: 0px !important;
+}
+}
+
+}
+
+@media (max-width:440px){
+.container{
+  display: grid;
+  grid-template-columns: auto;
+
+  .left{
+  display: grid;
+  grid-template-columns: auto;
+ row-gap: 14px;
+}
+
+}
+
+}
+
