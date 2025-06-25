@@ -1,5 +1,4 @@
 @use '../../styles/index.scss' as *;
-@import '../../styles/variables.scss';
 
 .treasureSection {
   padding: 24px;
@@ -7,6 +6,13 @@
   width: 100%;
   margin: 0 auto;
   font-family: $primary-font;
+
+    @include max($mobile-l) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   }
 
   &> .treasureTitle {
     font-size: $fnt-size-2xl;
@@ -23,18 +29,6 @@
 
 }
 
-
-
-
-
-@media screen and (max-width: $mobile-l) {
-  .treasure-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
 
 
 
