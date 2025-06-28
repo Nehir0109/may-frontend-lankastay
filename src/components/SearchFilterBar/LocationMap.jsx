@@ -1,19 +1,13 @@
 
 import mapboxgl from 'mapbox-gl';
-
 import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions.css';
 import React, { useEffect, useRef } from 'react';
-import { clamp } from 'date-fns';
-
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2V5bWFndW5heXkiLCJhIjoiY21iczQxejRmMGN0ZDJrc2Q5N3lldG5ycyJ9.ieaLLlzL_ucr-lEfJCcOxQ'; 
 
-const LocationMap = ({ setFieldValue }) => {
-
-
-
+const LocationMap = ({ setFieldValue, onClose }) => {
   const mapRef = useRef(null);
 
   useEffect(() => {
@@ -32,23 +26,26 @@ const LocationMap = ({ setFieldValue }) => {
 
     map.addControl(directions, 'top-left');
 
-    // Harita ilk yüklendiğinde varsayılan rota 
-    // directions.setOrigin([28.9795, 41.0151]); // Başlangıç
-    // directions.setDestination([28.9768, 41.0055]); // Varış
-
-    // Rota seçildiğinde lokasyon bilgisi Formik'e aktarılır
     directions.on('route', (e) => {
       const dest = e.route[0].legs[0].steps.slice(-1)[0].maneuver.location;
       const formatted = `${dest[1]},${dest[0]}`; // lat, lng
       setFieldValue('location', formatted);
+      onClose?.(); // Modal'ı kapat
     });
 
     return () => map.remove();
-  }, [setFieldValue]);
+  }, [setFieldValue, onClose]);
 
-
-  return <div ref={mapRef} className="navigasyon" style={{width: '500px' , height: '300px', marginTop: '10px' }} /> ;
-// style={{width: '500px', height: '300px', marginTop: '10px' }}
+  return (
+    <div
+      ref={mapRef}
+      style={{
+        width: '100%',
+        height: '400px',
+        borderRadius: '8px',
+      }}
+    />
+  );
 };
 
 export default LocationMap;
