@@ -11,26 +11,26 @@ const choices = [
     {
         image: Rectangle1,
         title: 'Green Lake',
-        subtitle: 'Nature',
-        isPopular: false,
+        type: 'Nature',
+        popular: false,
     },
     {
         image: Rectangle2,
         title: 'Dog Clubs',
-        subtitle: 'Pool',
-        isPopular: false,
+        type: 'Pool',
+        popular: false,
     },
     {
         image: Rectangle3,
         title: 'Labour and Wait',
-        subtitle: 'Shopping',
-        isPopular: true,
+        type: 'Shopping',
+        popular: true,
     },
     {
         image: Rectangle4,
         title: 'Snorkeling',
-        subtitle: 'Beach',
-        isPopular: false,
+        type: 'Beach',
+        popular: false,
     },
 ];
 

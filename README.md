@@ -41,3 +41,10 @@
 ## API Notları:
 
 İlerleyen zamandalarda doldurulacaktır.
+
+
+## TreasureToChoose Notları:
+
+- Proje içerisinde kullanılacak olan TreasureToChoose bileşeni, `components/treasureChoose` klasörü altında bulunmaktadır.
+- Componentim su verileri kabul eder : image, title, type, popular.
+  - image: Resim URL'si, title: Başlık, type: Tür, popular: Popülerlik durumu (boolean).

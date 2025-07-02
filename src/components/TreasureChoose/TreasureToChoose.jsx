@@ -1,4 +1,3 @@
-import React, {useEffect} from 'react';
 import ChoiceCard from '../TreasureCard/ChoiceCard.jsx';
 import styles from './TreasureToChoose.module.scss';
 
@@ -14,8 +13,8 @@ const TreasureToChoose = ({ choices }) => {
                         key={index}
                         image={choice.image}
                         title={choice.title}
-                        subtitle={choice.subtitle}
-                        isPopular={choice.isPopular}
+                        subtitle={choice.type}
+                        isPopular={choice.popular}
                     />
                 ))}
             </div>
