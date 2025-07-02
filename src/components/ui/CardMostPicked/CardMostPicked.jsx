@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import useData from "../../../hooks/useData";
 import MostPickedCard from "../MostPickedCard/MostPickedCard";
 import styles from "./CardMostPicked.module.scss";
