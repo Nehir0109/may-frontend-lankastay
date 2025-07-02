@@ -11,11 +11,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: Home,
-  },
-    {
-        path: "/details",
-        Component: DetailsPage,
-    }
+  }
 ]);
 
 

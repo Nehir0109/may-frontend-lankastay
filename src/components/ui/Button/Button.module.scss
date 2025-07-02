@@ -1,0 +1,18 @@
+@use '../../../styles/index.scss' as *;
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    cursor: pointer;
+    border: none;
+    background-color: $primary;
+    color: $white;
+    font-family:$primary-font ;
+    transition: transform 0.3s ease,  background-color 0.3s ease;
+
+    &:hover {
+    transform: scale(1.05);
+    background-color: darken($primary, 10%);
+  }
+}
