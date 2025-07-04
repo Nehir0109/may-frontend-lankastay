@@ -26,6 +26,12 @@
       align-items: center;
       gap: 40px;
       padding: 10px;
+      font-weight: 400;
+
+      .navActive{
+        color: $primary;
+        font-weight: 500;
+      }
     }
 
     .loginBtn {
