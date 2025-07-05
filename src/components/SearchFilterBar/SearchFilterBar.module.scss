@@ -24,6 +24,7 @@
 
   input {
     outline: none;
+    cursor: pointer;
   }
 
   p {
@@ -103,6 +104,7 @@
 
     button {
       margin: auto;
+     
       padding: 14px;
       width: 190px;
       border-radius: 13px;
@@ -154,6 +156,10 @@
     grid-template-columns: auto;
     height: 143px;
 
+  button{
+     margin-top: 10px !important;
+  
+}
     .error {
       top: -80px;
     }
@@ -176,7 +182,10 @@
         margin-bottom: 10px;
       }
     }
-
+  button{
+     margin-top:auto !important;
+  
+}
     .error {
       margin: 0px !important;
     }
