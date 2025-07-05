@@ -5,11 +5,12 @@ import cities from "../../assets/HeroSection/cities.svg";
 import treasure from "../../assets/HeroSection/treasure.svg";
 import users from "../../assets/HeroSection/users.svg";
 
+
 const HeroSection = () => {
   const heroData = {
-    title: "Forget Busy Work,\nStart Next Vacation",
+    title: "Forget Busy Work, Start Next Vacation",
     description:
-      "We provide what you need to enjoy your holiday with family. || Time to make another memorable moments.",
+      "We provide what you need to enjoy your holiday with family. Time to make another memorable moments.",
     buttonText: "Show More",
     stats: [
       {
@@ -32,17 +33,18 @@ const HeroSection = () => {
   };
 
   
-  const formattedTitle = heroData.title.replace(/\n/g, "<br />");
-  const formattedDescription = heroData.description.replace(/\|\|/g, "<br />");
+
+  
+
 
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroContent}>
         <h1
           className={styles.heroTitle}
-          dangerouslySetInnerHTML={{ __html: formattedTitle }}
-        />
-        <p dangerouslySetInnerHTML={{ __html: formattedDescription }} />
+          
+        >{heroData.title}</h1>
+        <p>{heroData.description}</p>
 
         <button className={styles.heroButton}>{heroData.buttonText}</button>
 

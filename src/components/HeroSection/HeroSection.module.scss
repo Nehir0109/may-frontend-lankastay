@@ -10,9 +10,12 @@
 }
 
 .heroTitle{
-    font-size: clamp(1.2rem, 5vw, 3.5rem);
+  font-size: 42px;
+    //font-size: clamp(1.2rem, 5vw, 3.5rem);
     color: $title;
     font-family: $primary-font;
+    max-width: 424px;
+    width: 100%;
     
 }
 
@@ -91,7 +94,10 @@ button{
   .heroSection {
     padding: 3rem 4rem;
     gap: 2rem;
+    
   }
+
+  
 }
 
 @media (max-width: $tablet-l) {
@@ -106,6 +112,11 @@ button{
   .heroContent {
     max-width: 100%;
     order: 2;
+  }
+
+  .heroContent .heroTitle{
+    text-align: center;
+    margin: 0 auto;
   }
 
   .heroImage {
