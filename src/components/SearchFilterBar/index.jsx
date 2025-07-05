@@ -46,6 +46,7 @@ const SearchFilterBar = () => {
               <div className={style.wrapper}>
                 <div className={style.check}>
                   <img src="/images/SearchFilterBar/Frame.png" alt="" />
+                  <div className={style.datePickerWrapper}>
                   <DatePicker
                     selected={values.tarih}
                     onChange={(val) => setFieldValue('tarih', val)}
@@ -54,6 +55,7 @@ const SearchFilterBar = () => {
                     isClearable
                     minDate={new Date(new Date().setDate(new Date().getDate() + 1))}
                   />
+                  </div>
                 </div>
                 <div className={style.errors}>
                   <ErrorMessage name="tarih" component="div" className={style.error} />
@@ -96,7 +98,7 @@ const SearchFilterBar = () => {
 
             {/* Buton */}
             <div className={style.right}>
-              <Button type="submit">Tıklayınız</Button>
+              <Button type="submit">Search</Button>
             </div>
           </div>
 
