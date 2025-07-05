@@ -1,66 +1,67 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import roomImage from "../../assets/herosection.png";
 import styles from "../HeroSection/HeroSection.module.scss";
-import cities from "../../assets/HeroSection/cities.svg";
-import treasure from "../../assets/HeroSection/treasure.svg";
-import users from "../../assets/HeroSection/users.svg";
+import useData from '../../hooks/useData';
+import usersIcon from "../../assets/HeroSection/users.svg";
+import citiesIcon from "../../assets/HeroSection/cities.svg";
+import treasureIcon from "../../assets/HeroSection/treasure.svg";
 
 
 const HeroSection = () => {
-  const heroData = {
-    title: "Forget Busy Work, Start Next Vacation",
-    description:
-      "We provide what you need to enjoy your holiday with family. Time to make another memorable moments.",
-    buttonText: "Show More",
-    stats: [
-      {
-        icon: users,
-        label: "2500 Users",
-        alt: "users"
-      },
-      {
-        icon: treasure,
-        label: "200 Treasure",
-        alt: "treasure"
-      },
-      {
-        icon: cities,
-        label: "100 Cities",
-        alt: "cities"
-      }
-    ],
-    image: roomImage
-  };
+
+   const {data, loading, error} = useData("hotels");
+   const [randomHotel, setRandomHotel] = useState(null);
+
+   useEffect(()=> {
+    if(data && data.length > 0){
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setRandomHotel(data[randomIndex]);
+    }
+   }, [data]);
 
   
+   if (loading) return <p>Loading...</p>;
+  if (error) return <p>Hata: {error.message}</p>;
+  if (!randomHotel) return null;
 
-  
 
+ 
 
   return (
     <section className={styles.heroSection}>
       <div className={styles.heroContent}>
-        <h1
-          className={styles.heroTitle}
-          
-        >{heroData.title}</h1>
-        <p>{heroData.description}</p>
+        <h1 className={styles.heroTitle}>
+          {randomHotel.name || "Hotel Name Not Found"}
+        </h1>
 
-        <button className={styles.heroButton}>{heroData.buttonText}</button>
+        <p>
+          {randomHotel.description || "No description available for this hotel."}
+        </p>
+
+        <button className={styles.heroButton}>Explore Now</button>
 
         <div className={styles.heroStarts}>
-          {heroData.stats.map((item, i) => (
-            <div key={i}>
-              <img src={item.icon} alt={item.alt} />
-              <span>{item.label}</span>
-            </div>
-          ))}
+          <div>
+            <img src={usersIcon} alt="users" />
+            <span>{randomHotel.rating} Rating</span>
+          </div>
+          <div>
+            <img src={treasureIcon} alt="treasure" />
+            <span>{randomHotel.features?.bedroom || 1} Bedrooms</span>
+          </div>
+          <div>
+            <img src={citiesIcon} alt="cities" />
+            <span>{randomHotel.city}, {randomHotel.country}</span>
+          </div>
         </div>
       </div>
 
       <div className={styles.heroImage}>
         <div className={styles.heroImageBackground}></div>
-        <img src={heroData.image} alt="Vacation Room" />
+        <img
+          src={randomHotel.coverImage}
+          alt={randomHotel.name}
+        />
       </div>
     </section>
   );
