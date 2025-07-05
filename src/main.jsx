@@ -1,9 +1,8 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home";
 import "./styles/global.scss";
-
+import VerifiedScreen from "./components/VerifiedScreen/VerifiedScreen";
 
 // React Router route yapısının kurgulanacağı kısımdır.
 //  Detaylı bilgi için https://reactrouter.com/start/data/installation
@@ -15,10 +14,7 @@ const router = createBrowserRouter([
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <>
+  <>
     <RouterProvider router={router} />
-    </>
-    
-  </StrictMode>
+  </>
 );
