@@ -17,7 +17,7 @@ const HeroSection = () => {
       const randomIndex = Math.floor(Math.random() * data.length);
       setRandomHotel(data[randomIndex]);
     }
-   }, [data]);
+   }, []);
 
   
    if (loading) return <p>Loading...</p>;
@@ -35,7 +35,7 @@ const HeroSection = () => {
         </h1>
 
         <p>
-          {randomHotel.description || "No description available for this hotel."}
+          {randomHotel.description.slice(0, 200) + "..."|| "No description available for this hotel."}
         </p>
 
         <button className={styles.heroButton}>Explore Now</button>
