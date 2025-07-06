@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import roomImage from "../../assets/herosection.png";
 import styles from "../HeroSection/HeroSection.module.scss";
 import useData from '../../hooks/useData';
 import usersIcon from "../../assets/HeroSection/users.svg";
