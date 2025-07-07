@@ -1,23 +1,26 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router";
+import useWindow from "@/hooks/useWindow"; 
+import MobileNavbar from "../MobileNavbar/MobileNavbar.jsx";
 import Button from "../../ui/Button/Button.jsx";
 import styles from "./Navbar.module.scss";
 import logo from "@/assets/logo.svg"; 
 
 const Navbar = () => {
+    const { windowSize } = useWindow();
+    const isMobile = windowSize <= 870; //BURAYA BAK GERİ 
+
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const loggedIn = localStorage.getItem("isLoggedIn") === "true";
-        setIsLoggedIn(loggedIn);
-    }, []);
-
     const handleLogout = () => {
-        localStorage.removeItem("isLoggedIn");
         setIsLoggedIn(false);
         navigate("/"); // Anasayfaya yönlendir
     };
+
+    if (isMobile) {
+    return <MobileNavbar isAuth={isLoggedIn} />;
+    }
 
     return (
         <nav className={styles.navbar}>
@@ -27,11 +30,11 @@ const Navbar = () => {
 
             <div className={styles.navbarContent}>
                 <ul className={styles.navLinks}>
-                    <li> <NavLink to="/" className={({ isActive }) => isActive ? styles.navActive : undefined} >Home</NavLink> </li>
-                    <li> <NavLink to="/hotels" className={({ isActive }) => isActive ? styles.navActive : undefined} >Hotels</NavLink> </li>
-                    <li> <NavLink to="/rooms" className={({ isActive }) => isActive ? styles.navActive : undefined} >Rooms</NavLink> </li>
-                    <li> <NavLink to="/about" className={({ isActive }) => isActive ? styles.navActive : undefined} >About</NavLink> </li>
-                    <li> <NavLink to="/contact" className={({ isActive }) => isActive ? styles.navActive : undefined} >Contact</NavLink> </li>
+                    <li><NavLink to="/" className={({ isActive }) => isActive ? styles.navActive : ""}>Home</NavLink> </li>
+                    <li><NavLink to="/hotels" className={({ isActive }) => isActive ? styles.navActive : ""}>Hotels</NavLink></li>
+                    <li><NavLink to="/rooms" className={({ isActive }) => isActive ? styles.navActive : ""}>Rooms</NavLink></li>
+                    <li><NavLink to="/about" className={({ isActive }) => isActive ? styles.navActive : ""}>About</NavLink></li>
+                    <li><NavLink to="/contact" className={({ isActive }) => isActive ? styles.navActive : ""}>Contact</NavLink></li>
                 </ul>
 
                 <div>
