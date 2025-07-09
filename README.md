@@ -48,15 +48,17 @@
 - Proje içerisinde kullanılacak olan TreasureToChoose bileşeni, `components/treasureChoose` klasörü altında bulunmaktadır.
 - Componentim su verileri kabul eder : image, title, type, popular.
 - image: Resim URL'si (string), title: Başlık (string), type: Tür (string), popular: Popülerlik durumu (boolean).
-- componentim "choices" diye bir prps alır. Bu props, bir dizi olarak beklenir ve her bir öğe, yukarıda belirtilen özelliklere sahip bir nesne olmalıdır.
+- componentim "choices" diye bir props alır. Bu props, bir dizi olarak beklenir ve her bir öğe, yukarıda belirtilen özelliklere sahip bir nesne olmalıdır.
 - örnek olarak ilk kart, image olarak Reactangle1, title olarak "green lake", type olarak "nature", popular olarak ise true değerini alır.
 - Component, bu verileri kullanarak her bir kartı oluşturur ve kullanıcı etkileşimlerine göre gerekli işlemleri gerçekleştirir.
+```jsx
 <treasureChoose
-  choices={[
-    {
-      image: 'Rectangle1',
-      title: 'green lake',
-      type: 'nature',
-      popular: true,
-    }
-  ]}
+choices={[
+{
+image: 'Rectangle1',
+title: 'green lake',
+type: 'nature',
+popular: true,
+}
+]}
+```

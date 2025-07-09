@@ -1,9 +1,8 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./components/Home";
-import DetailsPage from "./components/DetailsPage/DetailsPage.jsx";
 import "./styles/global.scss";
+import Home from "./pages/Home/index.jsx";
 
 // React Router route yapısının kurgulanacağı kısımdır.
 //  Detaylı bilgi için https://reactrouter.com/start/data/installation
