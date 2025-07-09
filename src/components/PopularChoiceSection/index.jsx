@@ -38,7 +38,7 @@ const locationList = [
 const PopularChoiceSection = () => {
   return (
     <section className={styles.popularChoiceSection}>
-      <h2 className={styles.title}>Popular Choice</h2>
+      
       <div className={styles.cardGrid}>
         {imageList.map((img, index) => (
           <ChoiceCard
