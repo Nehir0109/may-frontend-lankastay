@@ -8,7 +8,7 @@ import logo from "@/assets/logo.svg";
 
 const Navbar = () => {
     const { windowSize } = useWindow();
-    const isMobile = windowSize <= 870; //BURAYA BAK GERİ 
+    const isMobile = windowSize <= 870; 
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const navigate = useNavigate();
