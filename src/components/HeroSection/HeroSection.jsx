@@ -4,6 +4,7 @@ import useData from '../../hooks/useData';
 import usersIcon from "../../assets/HeroSection/users.svg";
 import citiesIcon from "../../assets/HeroSection/cities.svg";
 import treasureIcon from "../../assets/HeroSection/treasure.svg";
+import Button from '../ui/Button/Button';
 
 
 const HeroSection = () => {
@@ -33,11 +34,13 @@ const HeroSection = () => {
           {randomHotel.name || "Hotel Name Not Found"}
         </h1>
 
-        <p>
+        <p className={styles.heroDescription}>
           {randomHotel.description.slice(0, 200) + "..."|| "No description available for this hotel."}
         </p>
 
-        <button className={styles.heroButton}>Explore Now</button>
+         <Button type="button" className={styles.heroButton}>
+          Explore Now
+        </Button>
 
         <div className={styles.heroStarts}>
           <div>
