@@ -1,0 +1,64 @@
+@use "../../styles/variables" as *;
+
+.loginContainer {
+  max-width: 350px;
+  margin: auto;
+  padding: 2rem;
+  font-family: $primary-font;
+
+  .title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .checkboxRow {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+  }
+
+  .loginButton {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.75rem;
+    background-color: #003bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .signupLink {
+    text-align: center;
+    margin-top: 1rem;
+
+    a {
+      text-decoration: underline;
+      font-weight: 500;
+      color: black;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home";
 import "./styles/global.scss";
 import VerifiedScreen from "./components/VerifiedScreen/VerifiedScreen";
+import { LoginForm } from "./components/LoginForm/LoginForm";
 
 // React Router route yapısının kurgulanacağı kısımdır.
 //  Detaylı bilgi için https://reactrouter.com/start/data/installation
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: Home,
+  },
+  {
+    path:"/login",
+    Component: LoginForm,
   },
 ]);
 
