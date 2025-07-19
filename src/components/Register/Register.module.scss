@@ -1,5 +1,4 @@
-   .register-container{
-    max-width: 100%;
-    display: flex;
-   
-   }
+ @use '/src/styles/variables' as *;
+ .registerContainer{
+  background-color: black;
+ }

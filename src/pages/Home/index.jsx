@@ -9,7 +9,7 @@ const Home = () => {
       <header><Navbar /></header>
       <HeroSection />
       <SearchFilterBar />
-      <Register />
+      
     </>
   );
 };
