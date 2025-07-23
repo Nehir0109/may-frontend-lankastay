@@ -1,0 +1,108 @@
+@use '@/styles/index.scss' as *;
+
+.bookingCriteria {
+    font-family: $primary-font;
+    color: $title;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .label {
+        font-size: $fnt-size-md;
+        font-weight: 400;
+        line-height: 170%;
+    }
+
+    .durationPart, .datePart {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .durationControl {
+        background-color: $copyrightBg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.125rem;
+        border-radius: 4px;
+        max-width: 320px;
+        height: 45px;
+
+        .btnMinus, .btnPlus {
+            color: $white;
+            padding: 21px 17px;
+            font-size: $fnt-size-3xl;
+            font-weight: bold;
+            gap: 10px;
+            height: 45px;
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btnMinus {
+            background-color: $red;
+        }
+
+        .btnPlus {
+            background-color: $green;
+        }
+
+        .durationText {
+            font-size: $fnt-size-md;
+            font-weight: 400;
+        }
+    }
+
+    .dateDisplay {
+        display: flex;
+        align-items: center;
+        background-color: $copyrightBg;
+        width: 100%;
+    max-width: 320px;
+    height: 45px;
+        border-radius: 4px;
+        gap: 30px;
+        cursor: pointer;
+        text-align: center;
+
+        .calendarIcon {
+            width: 25px;
+            height: 25px;
+        }
+
+        .dateText {
+            font-size: $fnt-size-md;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    .dateInputs {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+
+        input {
+            flex: 1;
+            font-size: $fnt-size-md;
+            padding: 0.5rem;
+            border: 1px solid $border;
+            border-radius: 4px;
+        }
+    }
+
+    .priceInfo {
+        font-size: $fnt-size-md;
+        color: $text-secondary;
+
+        .price {
+            font-weight: 700;
+            color: $primary;
+            margin: 0 0.25rem;
+        }
+    }
+}
