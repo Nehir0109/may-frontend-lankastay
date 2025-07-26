@@ -1,10 +1,10 @@
-import CardMostPicked from "../../components/ui/CardMostPicked/CardMostPicked";
+import MostPicked from "../../components/MostPicked/MostPicked";
 
 const Home = () => {
   return (
     <>
       <h1>Home Page</h1>
-      <CardMostPicked />
+      <MostPicked />
     </>
   );
 };
