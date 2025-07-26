@@ -10,10 +10,8 @@ const Home = () => {
     <>
       <h1>Home Page</h1>
         <TreasureToChoose
-        choices={data ? data.slice(0,6).treasures : []}
+        choices={data ? data : []}
         />
-
-      
     </>
   );
 };
