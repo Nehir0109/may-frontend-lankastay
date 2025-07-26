@@ -1,4 +1,7 @@
+@use "../../styles/index.scss" as *;
+
 .section {
+  font-family: $primary-font;
   margin-top: 80px;
   padding: 0 80px;
 
@@ -9,8 +12,9 @@
 
 .title {
   font-size: 24px;
-  font-weight: 600;
   margin-bottom: 32px;
+  color: $title;
+  font-weight: 500;
 }
 
 .grid {
