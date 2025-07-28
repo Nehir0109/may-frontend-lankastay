@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Home from "./pages/Home";
 import "./styles/global.scss";
+import "react-loading-skeleton/dist/skeleton.css";
 import VerifiedScreen from "./components/VerifiedScreen/VerifiedScreen";
 import { LoginForm } from "./components/LoginForm/LoginForm";
 
