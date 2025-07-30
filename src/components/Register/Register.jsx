@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Button from "../ui/Button/Button.jsx";
 import style from "../Register/Register.module.scss";
-import validationSchema from "../../libs/validationSchema.js";
+ import {validationSchema} from "../../libs/validationSchema.js";
 const Register = () => {
   const initialValues = {
     name: "",
@@ -13,17 +13,8 @@ const Register = () => {
     username: "",
     password: "",
   };
-const validationSchema = validationSchemas;
-  // const validationSchema = Yup.object({
-  //   name: Yup.string().required("Name is required"),
-  //   email: Yup.string().email("Invalid email").required("Email is required"),
-  //   phone: Yup.string().required("Phone number is required"),
-  //   country: Yup.string().required("Country is required"),
-  //   username: Yup.string().required("Username is required"),
-  //   password: Yup.string()
-  //     .min(6, "Password must be at least 6 characters")
-  //     .required("Password is required"),
-  // });
+
+
 
   const handleSubmit = (values) => {
     localStorage.setItem("userData", JSON.stringify(values));
@@ -31,16 +22,17 @@ const validationSchema = validationSchemas;
   };
 
   return (
-    <div className="registerContainer">
-      <div className="registerLeft">
-        <div className="overlay">
-          <h1 className="logo">
+    <div className={style.registerContainer}>
+      
+      <div className={style.registerLeft}>
+        <div className={style.overlay}>
+          <h1 className={style.logo}>
             Lanka<span>Stay.</span>
           </h1>
         </div>
       </div>
 
-      <div className="registerRight">
+      <div className={style.registerRight}>
         <h2>Create Account</h2>
 
         <Formik
@@ -49,9 +41,9 @@ const validationSchema = validationSchemas;
           onSubmit={handleSubmit}
         >
           {() => (
-            <Form className="registerForm">
+            <Form className={style.registerForm}>
               {["name", "email", "phone", "country", "username", "password"].map((field) => (
-                <div key={field} className="formGroup">
+                <div key={field} className={style.formGroup}>
                   <Field
                     name={field}
                     type={field === "password" ? "password" : "text"}
@@ -63,11 +55,11 @@ const validationSchema = validationSchemas;
                         : field.charAt(0).toUpperCase() + field.slice(1)
                     }
                   />
-                  <ErrorMessage name={field} component="div" className="error" />
+                  <ErrorMessage name={field} component="div" className={style.error} />
                 </div>
               ))}
 
-              <div className="terms">
+              <div className={style.terms}>
                 <Field type="checkbox" name="terms" required />
                 <label htmlFor="terms">
                   By signing up you agree to{" "}
@@ -78,11 +70,11 @@ const validationSchema = validationSchemas;
                 </label>
               </div>
 
-              <Button type="submit" className="registerButton">
+              <Button type="submit" className={style.registerButton}>
                 Register
               </Button>
 
-              <div className="loginLink">
+              <div className={style.loginLink}>
                 <a href="/login">Login</a>
               </div>
             </Form>
