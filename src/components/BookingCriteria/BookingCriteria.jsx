@@ -2,21 +2,24 @@ import { useState, useEffect } from 'react';
 import styles from './BookingCriteria.module.scss';
 
 const BookingCriteria = ({ pricePerNight, onCriteriaChange }) => {
-    const [duration, setDuration] = useState(1);
-    const [startDate, setStartDate] = useState('');
-    const [endDate, setEndDate] = useState('');
-    const [showDatePicker, setShowDatePicker] = useState(false);
+    
+    const [duration, setDuration] = useState(1); 
+    const [startDate, setStartDate] = useState(''); 
+    const [endDate, setEndDate] = useState('');    
+    const [showDatePicker, setShowDatePicker] = useState(false); // Takvim açık mı kontrolü 
 
+
+    // 1. Tarihler değişince duration'ı güncelle
     useEffect(() => {
         if (startDate && endDate) {
             const start = new Date(startDate);
             const end = new Date(endDate);
-            const diffTime = end - start;
-            const diffDays = diffTime / (1000 * 60 * 60 * 24);
+            const diffDays = (end - start) / (1000 * 60 * 60 * 24);
             if (diffDays > 0) setDuration(diffDays);
         }
     }, [startDate, endDate]);
 
+    // 2. Süre değişince endDate'i güncelle (startDate'e göre)
     useEffect(() => {
         if (startDate) {
             const start = new Date(startDate);
@@ -26,19 +29,23 @@ const BookingCriteria = ({ pricePerNight, onCriteriaChange }) => {
         }
     }, [duration]);
 
+    // 3. Her değişiklikte dışarı bilgi gönder
     useEffect(() => {
-        onCriteriaChange && onCriteriaChange({ duration, startDate, endDate });
+        if (onCriteriaChange) {
+            onCriteriaChange({ duration, startDate, endDate });
+        }
     }, [duration, startDate, endDate, onCriteriaChange]);
 
+    // 4. Tarihler seçildiyse takvimi kapat
     useEffect(() => {
-    if (startDate && endDate) {
-        setShowDatePicker(false);
-    }
+        if (startDate && endDate) {
+            setShowDatePicker(false);
+        }
     }, [startDate, endDate]);
 
 
-    const handleIncrement = () => setDuration((d) => Math.min(d + 1, 30));
-    const handleDecrement = () => setDuration((d) => (d > 1 ? d - 1 : 1));
+    const handleIncrement = () => setDuration((prev) => Math.min(prev + 1, 30));
+    const handleDecrement = () => setDuration((prev) => (prev > 1 ? prev - 1 : 1));
 
     const formatDate = (dateStr) => {
         if (!dateStr) return '';
@@ -48,9 +55,10 @@ const BookingCriteria = ({ pricePerNight, onCriteriaChange }) => {
 
     return (
         <div className={styles.bookingCriteria}>
-            {/* Duration */}
+
+            {/* Süre Seçimi */}
             <div className={styles.durationPart}>
-                <label className={styles.label}>How long you will stay?</label>
+                <label className={styles.label}>How long will you stay?</label>
                 <div className={styles.durationControl}>
                     <button className={styles.btnMinus} onClick={handleDecrement}>-</button>
                     <span className={styles.durationText}>
@@ -60,11 +68,16 @@ const BookingCriteria = ({ pricePerNight, onCriteriaChange }) => {
                 </div>
             </div>
 
-            {/* Date */}
+            {/* Tarih Seçimi */}
             <div className={styles.datePart}>
                 <label className={styles.label}>Pick a Date</label>
-                <div className={styles.dateDisplay} onClick={() => setShowDatePicker(!showDatePicker)}>
-                    <img src="/icons/calendar.svg" alt="calendar" className={styles.calendarIcon} />
+                <div
+                    className={styles.dateDisplay}
+                    onClick={() => setShowDatePicker(!showDatePicker)}
+                >
+                    <div className={styles.calendarWrapper}>
+                        <img src="/icons/calendar.svg" alt="calendar" className={styles.calendarIcon} />
+                    </div>
                     <span className={styles.dateText}>
                         {startDate && endDate
                             ? `${formatDate(startDate)} - ${formatDate(endDate)}`
@@ -90,11 +103,17 @@ const BookingCriteria = ({ pricePerNight, onCriteriaChange }) => {
                 )}
             </div>
 
-            {/* Price */}
+            {/* Ücret Bilgisi */}
             <div className={styles.priceInfo}>
                 <span>You will pay: </span>
-                <span className={styles.price}>${pricePerNight * duration || 0} USD</span>
-                <span> per {duration} Night{duration > 1 ? 's' : ''}</span>
+                <span className={styles.price}>
+                    ${pricePerNight * duration || 0} USD
+                </span>
+                <br />
+                <span>per </span>
+                <span className={styles.price}>
+                    {duration} Night{duration > 1 ? 's' : ''}
+                </span>
             </div>
         </div>
     );

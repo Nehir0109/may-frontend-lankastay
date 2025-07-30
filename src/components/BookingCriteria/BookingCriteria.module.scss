@@ -14,7 +14,8 @@
         line-height: 170%;
     }
 
-    .durationPart, .datePart {
+    .durationPart,
+    .datePart {
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -30,7 +31,8 @@
         max-width: 320px;
         height: 45px;
 
-        .btnMinus, .btnPlus {
+        .btnMinus,
+        .btnPlus {
             color: $white;
             padding: 21px 17px;
             font-size: $fnt-size-3xl;
@@ -62,16 +64,26 @@
         align-items: center;
         background-color: $copyrightBg;
         width: 100%;
-    max-width: 320px;
-    height: 45px;
+        max-width: 320px;
+        height: 45px;
         border-radius: 4px;
         gap: 30px;
         cursor: pointer;
         text-align: center;
 
-        .calendarIcon {
-            width: 25px;
-            height: 25px;
+        .calendarWrapper {
+            width: 45px;
+            height: 45px;
+            border-radius: 4px;
+            background-color: #152C5B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .calendarIcon {
+                width: 25px;
+                height: 25px;
+            }
         }
 
         .dateText {
@@ -96,13 +108,15 @@
     }
 
     .priceInfo {
-        font-size: $fnt-size-md;
-        color: $text-secondary;
+        font-family: $primary-font;
+        font-size: $fnt-size-2xl;
+        font-weight: 300;
+        color: #B0B0B0;
+        line-height: 170%;
 
         .price {
-            font-weight: 700;
-            color: $primary;
-            margin: 0 0.25rem;
+            font-weight: 500;
+            color: #152C5B;
         }
     }
 }
