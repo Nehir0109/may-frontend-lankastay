@@ -1,0 +1,66 @@
+@use "../../styles/index.scss" as *;
+
+.container {
+  font-family: $primary-font;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 40px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.statBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  min-width: 110px;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.text {
+  font-size: $fnt-size-s;
+  color: $text;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.number {
+  color: $dark-text;
+  margin-right: 4px;
+  font-weight: 500;
+  font-size: $fnt-size-s;
+}
+
+@media (max-width: 500px) {
+  .container {
+    gap: 20px;
+  }
+
+  .statBox {
+    width: 80px;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .text {
+    font-size: $fnt-size-xs;
+  }
+
+  .number {
+    font-size: $fnt-size-md;
+  }
+}

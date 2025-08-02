@@ -1,17 +1,10 @@
-import TreasureToChoose from "../../components/TreasureChoose/TreasureToChoose.jsx";
-import useData from "../../hooks/useData.js";
-
+import QuickStats from "../../components/QuickStats/QuickStats.jsx";
 
 const Home = () => {
-
-    const {data} = useData("hotels");
-
   return (
     <>
       <h1>Home Page</h1>
-        <TreasureToChoose
-        choices={data ? data : []}
-        />
+      <QuickStats />
     </>
   );
 };
