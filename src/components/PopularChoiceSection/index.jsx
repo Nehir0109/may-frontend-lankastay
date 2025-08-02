@@ -4,33 +4,41 @@ import styles from "./PopularChoiceSection.module.scss";
 import useData from "../../hooks/useData";
 
 const hotelData = [
-  { id: null, image: "/images/PopularChoice/Shangri-La.png", title: "Shangri-La", subtitle: "Colombo, Sri Lanka", isPopular: true },
-  { id: null, image: "/images/PopularChoice/Top-View.png", title: "Top View", subtitle: "Hikkaduwe, Sri Lanka", isPopular: false },
-  { id: null, image: "/images/PopularChoice/Green-Villa.png", title: "Green Villa", subtitle: "Kandy, Sri Lanka", isPopular: false },
-  { id: null, image: "/images/PopularChoice/Wooden-Pit.png", title: "Wooden Pit", subtitle: "Ambalangode, Sri Lanka", isPopular: false },
-  { id: null, image: "/images/PopularChoice/Boutiqe.png", title: "Boutique", subtitle: "Kandy, Sri Lanka", isPopular: false },
-  { id: null, image: "/images/PopularChoice/Modern.png", title: "Modern", subtitle: "Nuwereliya, Sri Lanka", isPopular: false },
-  { id: null, image: "/images/PopularChoice/Rain.png", title: "Silver Rain", subtitle: "Dehiwala, Sri Lanka", isPopular: false },
-  { id: null, image: "/images/PopularChoice/Cashville.png", title: "Cashville", subtitle: "Ampara, Sri Lanka", isPopular: true },
+  { id: null, image: "/images/PopularChoice/Shangri-La.png", title: "Shangri-La" },
+  { id: null, image: "/images/PopularChoice/Top-View.png", title: "Top View" },
+  { id: null, image: "/images/PopularChoice/Green-Villa.png", title: "Green Villa" },
+  { id: null, image: "/images/PopularChoice/Wooden-Pit.png", title: "Wooden Pit" },
+  { id: null, image: "/images/PopularChoice/Boutiqe.png", title: "Boutique" },
+  { id: null, image: "/images/PopularChoice/Modern.png", title: "Modern" },
+  { id: null, image: "/images/PopularChoice/Rain.png", title: "Silver Rain" },
+  { id: null, image: "/images/PopularChoice/Cashville.png", title: "Cashville" },
 ];
 
 const PopularChoiceSection = () => {
   const { data: apiHotels, loading, error } = useData("hotels");
-  const [hotelsWithId, setHotelsWithId] = useState(hotelData);
+  const [mergedHotels, setMergedHotels] = useState(hotelData);
 
   useEffect(() => {
-    if (apiHotels && apiHotels.length) {
-     
-      const updatedHotels = hotelData.map((hotel) => {
-        const matchedApiHotel = apiHotels.find(
-          (apiHotel) => apiHotel.name.toLowerCase() === hotel.title.toLowerCase()
+    if (apiHotels?.length) {
+      const updatedHotels = hotelData.map((staticHotel, index) => {
+        const matched = apiHotels.find(
+          (h) => h.name.toLowerCase() === staticHotel.title.toLowerCase()
         );
+
         return {
-          ...hotel,
-          id: matchedApiHotel ? matchedApiHotel.id : hotel.id,
+          ...staticHotel,
+          id: matched?.id || `static-${index}`,
+          subtitle: matched
+            ? `${matched.city}, ${matched.country}`
+            : "Unknown Location",
+          isPopular:
+            index === 0 || index === hotelData.length - 1
+              ? true
+              : matched?.popular || false,
         };
       });
-      setHotelsWithId(updatedHotels);
+
+      setMergedHotels(updatedHotels);
     }
   }, [apiHotels]);
 
@@ -40,10 +48,10 @@ const PopularChoiceSection = () => {
   return (
     <section className={styles.popularChoiceSection}>
       <div className={styles.cardGrid}>
-        {hotelsWithId.map((hotel) => (
+        {mergedHotels.map((hotel) => (
           <ChoiceCard
-            key={hotel.id || hotel.title} 
-            image={hotel.image}
+            key={hotel.id}
+            image={hotel.image}  
             title={hotel.title}
             subtitle={hotel.subtitle}
             isPopular={hotel.isPopular}
