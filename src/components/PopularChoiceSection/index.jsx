@@ -24,20 +24,19 @@ const PopularChoiceSection = () => {
         const matched = apiHotels.find(
           (h) => h.name.toLowerCase() === staticHotel.title.toLowerCase()
         );
-
-        return {
-          ...staticHotel,
-          id: matched?.id || `static-${index}`,
-          subtitle: matched
-            ? `${matched.city}, ${matched.country}`
-            : "Unknown Location",
-          isPopular:
-            index === 0 || index === hotelData.length - 1
-              ? true
-              : matched?.popular || false,
-        };
+        return matched
+          ? {
+              ...staticHotel,
+              id: matched.id,
+              subtitle: `${matched.city}, ${matched.country}`,
+              isPopular: index === 0 || index === hotelData.length - 1 ? true : matched.popular,
+            }
+          : {
+              ...staticHotel,
+              subtitle: "Unknown Location",
+              isPopular: index === 0 || index === hotelData.length - 1,
+            };
       });
-
       setMergedHotels(updatedHotels);
     }
   }, [apiHotels]);
@@ -48,10 +47,10 @@ const PopularChoiceSection = () => {
   return (
     <section className={styles.popularChoiceSection}>
       <div className={styles.cardGrid}>
-        {mergedHotels.map((hotel) => (
+        {mergedHotels.map((hotel, index) => (
           <ChoiceCard
-            key={hotel.id}
-            image={hotel.image}  
+            key={hotel.id || `static-${index}`}
+            image={hotel.image}
             title={hotel.title}
             subtitle={hotel.subtitle}
             isPopular={hotel.isPopular}
