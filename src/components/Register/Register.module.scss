@@ -20,11 +20,15 @@
        max-width: 625px;
        height: 700px;
 
-      .logo {
+      .logo{
         font-size: 2.5rem;
         font-weight: bold;
         color: #0052cc;
-        text-align: center;
+        text-align: center;  
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         span {
           color: #000;
@@ -94,7 +98,7 @@
         }
       }
 
-      .login-link {
+      .loginLink {
         margin-top: 1rem;
         text-align: center;
 
@@ -104,5 +108,12 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 660px) {
+  .registerContainer{
+    display: flex;
+    flex-direction: column;
   }
 }
