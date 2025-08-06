@@ -1,6 +1,6 @@
 import styles from "./LoginForm.module.scss";
 import Button from '../../components/ui/Button/Button';
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { Form, Formik, ErrorMessage, Field } from "formik";
 import * as Yup from "yup";
 import Alert from "../../components/ui/Alert/Alert";
@@ -43,7 +43,7 @@ export const LoginForm = () => {
       setAlertType("success");
 
       localStorage.setItem("user", JSON.stringify(matchedUser));
-      navigate("/dashboard");
+      //navigate("/dashboard");
     } else {
       setErrors({ password: "Kullanıcı adı veya şifre hatalı!" });
       setAlertMessage("Kullanıcı adı veya şifre hatalı!");
@@ -77,9 +77,8 @@ export const LoginForm = () => {
   {({ isSubmitting }) => (
     <>
       
-      <Alert message={alertMessage} type={alertType} />
-
       <Form className={styles.loginContainer}>
+        <Alert message={alertMessage} type={alertType} />
         <h2 className={styles.title}>Login Account</h2>
 
         <label htmlFor="username">Username</label>
