@@ -40,38 +40,25 @@
 
 ## API Notları:
 
-Otel verileri, projede hazır bulunan useData adlı custom hook aracılığıyla SWR kullanılarak çekilmektedir.
-Hook içinde MockAPI’deki temel URL (baseURL) sabit olarak tanımlanmıştır. Bu sayede sadece endpoint adı verilerek veri çekmek mümkündür.
+İlerleyen zamandalarda doldurulacaktır.
 
-```js
-import useData from "@/hooks/useData";
-const { data, loading, error } = useData("hotels");
+
+## TreasureToChoose Notları:
+
+- Proje içerisinde kullanılacak olan TreasureToChoose bileşeni, `components/treasureChoose` klasörü altında bulunmaktadır.
+- Componentim su verileri kabul eder : image, title, type, popular.
+- image: Resim URL'si (string), title: Başlık (string), type: Tür (string), popular: Popülerlik durumu (boolean).
+- componentim "choices" diye bir props alır. Bu props, bir dizi olarak beklenir ve her bir öğe, yukarıda belirtilen özelliklere sahip bir nesne olmalıdır.
+- örnek olarak ilk kart, image olarak Reactangle1, title olarak "green lake", type olarak "nature", popular olarak ise true değerini alır.
+- Component, bu verileri kullanarak her bir kartı oluşturur ve kullanıcı etkileşimlerine göre gerekli işlemleri gerçekleştirir.
+```jsx
+<treasureChoose
+choices={[
+{
+image: 'Rectangle1',
+title: 'green lake',
+type: 'nature',
+popular: true,
+}
+]}
 ```
-
-Bu kullanımda:
-• useData otomatik olarak https://.../api/v1/hotels adresine istek gönderir.
-• Gelen veriler localStorage’a kaydedilir.
-• Sayfa yenilense bile, varsa veri önce localStorage’dan alınır; ardından arka planda güncel veri çekilir.
-
-Dönen veri yapısı şu alanları içerir:
-• name: Otelin adı
-• city ve country: Otelin bulunduğu şehir ve ülke
-• coverImage: Otelin kapak fotoğrafı (URL)
-• gallery: Otelin iç ve dış mekan görselleri (dizi halinde URL’ler)
-• price: Gecelik fiyat (USD)
-• rating: Otelin kullanıcı puanı (0-5 arası)
-• description: Otel açıklaması (kısa tanıtım metni)
-• features:
-• bedroom: Yatak odası sayısı
-• livingRoom: Salon sayısı
-• bathroom: Banyo sayısı
-• internet: İnternet hızı veya türü
-• television: Televizyon sayısı
-• refrigerator: Buzdolabı sayısı
-• unitReady: Kullanıma hazır birim/adet
-• treasures: Otelin yakınındaki önemli/doğal/aktivite mekanları
-• title: Mekan veya aktivite adı
-• type: Türü (ör. Nature, Beach, Shopping, Pool)
-• image: İlgili yerin görseli (URL)
-• popular: Popülerlik durumu (true/false)
-• id: Otelin benzersiz ID’si
