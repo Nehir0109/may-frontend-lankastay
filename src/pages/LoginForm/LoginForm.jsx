@@ -1,6 +1,6 @@
 
 import styles from "./LoginForm.module.scss";
-import Button from '../ui/Button/Button';
+import Button from '../../components/ui/Button/Button';
 import { Link } from "react-router";
 
 export const LoginForm = () => {

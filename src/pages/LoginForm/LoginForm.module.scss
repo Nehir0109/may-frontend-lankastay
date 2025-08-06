@@ -15,8 +15,10 @@
 
   .imageContainer {
   position: relative;
-  width: clamp(320px, 80vw, 700px);
-  height: clamp(300px, 80vh, 708px);
+  width: 650px;
+  height: 700px;
+  //width: clamp(320px, 80vw, 700px);
+  //height: clamp(300px, 80vh, 708px);
   flex-shrink: 0;
   overflow: hidden;
 

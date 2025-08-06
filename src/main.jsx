@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import "./styles/global.scss";
 import "react-loading-skeleton/dist/skeleton.css";
 import VerifiedScreen from "./components/VerifiedScreen/VerifiedScreen";
-import { LoginForm } from "./components/LoginForm/LoginForm";
+import { LoginForm } from "./pages/LoginForm/LoginForm";
 
 // React Router route yapısının kurgulanacağı kısımdır.
 //  Detaylı bilgi için https://reactrouter.com/start/data/installation
