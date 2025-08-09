@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
-
+    padding: 10px;
     .overlay {
        background-color: rgba(255, 255, 255, 0.7);
        margin: 15px auto;
@@ -112,8 +112,11 @@
 }
 
 @media (max-width: 660px) {
-  .registerContainer{
-    display: flex;
-    flex-direction: column;
+  // .registerContainer{
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+  .registerLeft{
+    display: none;
   }
 }
