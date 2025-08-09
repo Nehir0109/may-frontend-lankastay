@@ -1,0 +1,27 @@
+import ChoiceCard from '../TreasureCard/ChoiceCard.jsx';
+import styles from './TreasureToChoose.module.scss';
+
+const TreasureToChoose = ({ choices }) => {
+
+
+    return (
+        <section className={styles.treasureSection}>
+           <h2 className={styles.treasureTitle}>Treasure to Choose</h2>
+            <div className={styles.cardGrid}>
+                {choices[0].treasures.map((treasure, index) => {
+                    return (
+                        <ChoiceCard
+                        key={index}
+                        title={treasure.title}
+                        type={treasure.type}
+                        image={treasure.image}
+                        isPopular={treasure.popular}
+                        />
+                    )
+                })}
+            </div>
+        </section>
+    );
+};
+
+export default TreasureToChoose;
