@@ -22,6 +22,11 @@
   flex-shrink: 0;
   overflow: hidden;
 
+  @media(max-width:1024px){
+    display: none;
+  
+  }
+
   .imageContent {
   position: absolute;
   width: 100%;
@@ -29,6 +34,7 @@
   object-fit: cover;
   top: 0;
   left: 0;
+  
   
 }
 
@@ -43,7 +49,7 @@
   font-weight: 450;
   text-align: center;
   color: #1a1a1a;
-  padding: 180px 138px;
+  padding: 2rem 3rem;
 
   max-width: 90%;
   background-color: rgba(255,255,255,0.7);
@@ -52,6 +58,7 @@
   span:first-child {
     color: #3252df;
   }
+  
 }
 
 
@@ -67,12 +74,45 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-   font-family: $primary-font;
+  font-family: $primary-font;
 
+  .fieldGroup{
+   display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    
+  }
+
+  .label{
+    margin-bottom: 0;
+  }
+
+  .input{
+   border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .invalid { border-color: #e11d48; }
+
+  .errorText {
+     min-height: 18px;    
+    font-size: 0.85rem;
+    line-height: 1.1;
+    color: #e11d48;
+    pointer-events: none;
+    margin-top: 2px;
+    display: inline-block;
+  }
+
+  
    .error{
     color:red;
-    font-size: 0.9rem;
-    margin-bottom: 8px;
+    font-size: 0.75rem;
+   
+    
    }
 
 
