@@ -1,6 +1,6 @@
-
 .card {
-  width: 323px;
+  width: 100%;
+  max-width: 323px;
   background: #fff;
   border-radius: 12px;
   padding: 24px;
@@ -14,48 +14,43 @@
 .title {
   color: #152c5b;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
-  font-style: normal;
+  font-size: 1.25rem; 
   font-weight: 500;
-  line-height: normal;
   margin-bottom: 12px;
 }
 
 .price {
   display: flex;
   align-items: baseline;
-  font-size: 36px;
+  font-size: 2.25rem;
   margin-bottom: 24px;
 }
 
 .amount {
   color: #1abc9c;
   font-family: "Poppins", sans-serif;
-  font-size: 36px;
-  font-style: normal;
+  font-size: 2.25rem;
   font-weight: 500;
-  line-height: normal;
 }
 
 .perNight {
   color: #b0b0b0;
   font-family: "Poppins", sans-serif;
-  font-size: 36px;
-  font-style: normal;
+  font-size: 1rem;
   font-weight: 275;
-  line-height: normal;
   margin-left: 8px;
 }
 
 .button {
-  width: 323px;
+  width: 100%;
+  max-width: 323px;
   height: 50px;
-  background-color: #003DFC;
-  color: #FAFAFA;
+  background-color: #003dfc;
+  color: #fafafa;
   border: none;
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
   cursor: pointer;
