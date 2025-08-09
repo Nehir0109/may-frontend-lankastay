@@ -1,5 +1,3 @@
-import QuickStats from "../../components/QuickStats/QuickStats.jsx";
-
 const Home = () => {
   return (
     <>
