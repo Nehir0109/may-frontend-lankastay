@@ -1,0 +1,83 @@
+
+@use "../../styles/variables" as *;
+
+.footerRoot {
+  width: 100%;
+  font-family: $primary-font;
+  color: $primary;
+}
+
+
+.footerTop {
+  max-width: 1400px;
+  margin: 0 auto;               
+  padding: 4rem 2rem;           
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.brandBlock {
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    color: $primary;
+    font-size: $fnt-size-4xl;
+    line-height: 1.1;
+    max-width: 200px;
+  }
+
+  .description {
+    color: $text-secondary;
+    margin-top: .75rem;
+    max-width: 360px;
+  }
+}
+
+.ctaBlock {
+  text-align: right;
+
+  .hotelOwner {
+    font-size: $fnt-size-xl;
+    font-weight: 400;
+    color: $primary;
+  }
+
+  .button {
+    padding: 8px 23px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+}
+
+
+.footerBottom {
+  width: 100%;
+  background-color: $primary;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: 22px 12px;           
+  font-size: $fnt-size-s;
+
+  
+  span:not(:last-child)::after {
+    content: " •";
+    margin-left: .5rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .footerTop {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ctaBlock {
+    text-align: left;
+  }
+}
