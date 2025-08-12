@@ -1,0 +1,122 @@
+ @use '/src/styles/variables' as *;
+
+.registerContainer {
+  display: flex;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+
+  .registerLeft {
+    flex: 1;
+    background-image: url(/public/images/Register/register.png); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 10px;
+    .overlay {
+       background-color: rgba(255, 255, 255, 0.7);
+       margin: 15px auto;
+       border: 1px solid #E5E5E5;
+       border-radius: 30px;
+       max-width: 625px;
+       height: 700px;
+
+      .logo{
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #0052cc;
+        text-align: center;  
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .registerRight {
+    flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .registerForm {
+      .formGroup {
+        margin-bottom: 1.2rem;
+
+        input {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 1rem;
+        }
+
+        .error {
+          color: red;
+          font-size: 0.8rem;
+          margin-top: 0.3rem;
+        }
+      }
+
+      .terms {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+
+        input {
+          margin-right: 0.5rem;
+        }
+
+        a {
+          color: #0047ff;
+          text-decoration: underline;
+        }
+      }
+
+      Button {
+        width: 100%;
+       
+        color: white;
+        padding: 12px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.3s;
+
+        &:hover {
+          background-color: #0039cc;
+        }
+      }
+
+      .loginLink {
+        margin-top: 1rem;
+        text-align: center;
+
+        a {
+          color: #000;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 660px) {
+  // .registerContainer{
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+  .registerLeft{
+    display: none;
+  }
+}

@@ -1,12 +1,13 @@
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Home from "./pages/Home";
 import "./styles/global.scss";
+import "react-loading-skeleton/dist/skeleton.css";
 import VerifiedScreen from "./components/VerifiedScreen/VerifiedScreen";
 import BookingPage from "./pages/BookingPage/Booking";
+import LoginForm from "./components/LoginForm/LoginForm.jsx";
+import Home from "./pages/Home/index.jsx";
 
-// React Router route yapısının kurgulanacağı kısımdır.
-//  Detaylı bilgi için https://reactrouter.com/start/data/installation
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,10 +17,14 @@ const router = createBrowserRouter([
     path: "/booking/:id",
     Component: BookingPage,
   },
+  {
+    path: "/login",
+    Component: LoginForm,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <>
+  <StrictMode>
     <RouterProvider router={router} />
-  </>
+  </StrictMode>
 );
