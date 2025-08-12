@@ -1,0 +1,181 @@
+@use "../../styles/variables" as *;
+
+.heroSection{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   max-width: 1142px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.heroTitle{
+  font-size: 42px;
+    color: $title;
+    font-family: $primary-font;
+    max-width: 424px;
+    width: 100%;
+    
+}
+
+.heroDescription{
+    font-size: $fnt-size-xl;
+    margin-top: 30px;
+    color: $text;
+    font-family: $secondary-font;
+}
+
+.heroButton{
+    background-color: #0d6efd;
+    padding: 13px 35px;
+    color: $white;
+    margin-top: 30px;
+    font-size: $fnt-size-xl;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.heroStarts{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    margin-top: 50px;
+    font-family: $secondary-font;
+
+    div{
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      font-size: $fnt-size-xl;
+    }
+
+    img{
+        width: 32px;
+        height: 32px;
+        
+        
+    }
+
+    span{
+       margin-top: 10px;
+    }
+}
+
+
+.heroImage{
+    position: relative;
+    display: inline-block;
+
+    img{
+        border-radius: 20px;
+        border-top-left-radius: 95px;
+        position: relative;
+        width: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+
+    .heroImageBackground{
+        position: absolute;
+        top: 30px;
+        left: 35px;
+        width: 100%;
+        height: 100%;
+        border-radius: 1.5rem;
+        box-shadow: 0 0 0 2px $light-grey; 
+        z-index: 1;
+    }
+}
+
+
+@media (max-width: $desktop-m) {
+  .heroSection {
+    padding: 3rem 4rem;
+    gap: 2rem;
+    
+  }
+
+  
+}
+
+@media (max-width: $tablet-l) {
+  .heroSection {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+    gap:4rem;
+  }
+
+
+  .heroContent {
+    max-width: 100%;
+    order: 2;
+  }
+
+  .heroContent .heroTitle{
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .heroImage {
+    order: 1;
+  }
+}
+
+@media (max-width: $tablet-m) {
+
+  .heroContent .heroStarts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 1.5rem;
+    
+  }
+}
+
+@media (max-width: $mobile-l) {
+  .heroImage img {
+    max-width: 100%;
+  }
+}
+
+@media(max-width:420px){
+  .heroTitle{
+    font-size: clamp(1.5rem, 6vw, 2.7rem);
+  }
+}
+
+
+@media (max-width: 450px) {
+  .heroContent .heroStarts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .heroContent .heroStarts div {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: clamp(1rem, 3vw, 1rem); 
+  }
+
+  .heroContent .heroStarts div:nth-child(3) {
+    width: 100%;
+  }
+
+  .heroContent .heroStarts img {
+    width: clamp(30px, 6vw, 28px);  
+    height: clamp(30px, 6vw, 28px);
+  }
+
+  .heroContent .heroStarts span {
+    margin-top: clamp(4px, 2vw, 8px);
+  }
+}
+
