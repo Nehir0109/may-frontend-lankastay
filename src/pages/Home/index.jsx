@@ -11,10 +11,8 @@ const Home = () => {
       </header>
       <HeroSection />
       <SearchFilterBar />
+      <PopularChoiceSection />
       <Footer />
-      <div style={{ padding: "40px" }}>
-        <SearchFilterBar />
-      </div>
     </>
   );
 };
