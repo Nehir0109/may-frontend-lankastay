@@ -8,7 +8,7 @@ const [product, setProduct] = useState(null);
 
 useEffect(() => {
 // ID parametresine göre veri çekme
-fetch(`https://6829efb0ab2b5004cb3543e3.mockapi.io/api/v1/${id}`)
+fetch(`https://6829efb0ab2b5004cb3543e3.mockapi.io/api/v1/hotels/${id}`)
 .then((response) => response.json())
 .then((data) => setProduct(data));
 }, [id]);
@@ -17,7 +17,7 @@ if (!product) return <p>Loading...</p>;
 
 return (
 <div>
-<BookingCriteria onChange={(data) => setBookingData(data)} />
+<BookingCriteria pricePerNight={product.price}/>
 </div>
 );
 }
