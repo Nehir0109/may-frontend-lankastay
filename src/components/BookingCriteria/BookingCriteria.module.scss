@@ -28,7 +28,7 @@
         align-items: center;
         gap: 1.125rem;
         border-radius: 4px;
-        max-width: 320px;
+        width: 320px;
         height: 45px;
 
         .btnMinus,
@@ -120,4 +120,56 @@
             color: #152C5B;
         }
     }
+}
+@media (max-width: 390px) {
+  .booking-criteria {
+    padding: 5px; /* Daha minimal padding */
+  }
+
+  .booking-criteria__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px; /* Yukarı-aşağı dengeli */
+    line-height: 1.2; /* Metni dikeyde ortala */
+    font-size: 0.85rem; /* Küçültülmüş yazı */
+  }
+
+  .price-info {
+    font-size: 0.9rem; /* Daha küçük fiyat yazısı */
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  /* Takvimlerin küçük ekranda alt alta gelmesi */
+  .calendar-container {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .calendar-container .calendar {
+    width: 100% !important;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 320px) {
+  .booking-criteria {
+    padding: 4px;
+  }
+
+  .booking-criteria__button {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  .price-info {
+    font-size: 0.85rem;
+  }
+
+  .calendar-container {
+    gap: 6px;
+  }
 }

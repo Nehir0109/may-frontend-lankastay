@@ -1,15 +1,19 @@
 @use '@/styles/index.scss' as *;
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-}
+.Header {
+    border-bottom: 1px solid $border;
+    padding: 20px 0;
 
-.logo>img {
-    width: 140px;
-    height: 25px;
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logo>img {
+        width: 140px;
+        height: 25px;
+    }
 }
 
 .BookingContainer {
@@ -28,7 +32,6 @@
         gap: 4px;
         font-family: $primary-font;
         line-height: 100%;
-        letter-spacing: 0%;
 
         .Title {
             font-size: $fnt-size-8xl;
@@ -108,24 +111,184 @@
         align-items: center;
         gap: 20px;
 
-        .BookBtn, .CancelBtn{
+        .BookBtn,
+        .CancelBtn {
             width: 323px;
             font-family: $primary-font;
         }
 
-        .BookBtn{
+        .BookBtn {
             font-size: $fnt-size-2xl;
             font-weight: 500;
             height: 58px;
             border-radius: 10px;
         }
-        .CancelBtn{
-            background-color:$copyrightBg;
+
+        .CancelBtn {
+            background-color: $copyrightBg;
             height: 50px;
             border-radius: 4px;
             color: $text;
             font-size: $fnt-size-md;
             font-weight: 500;
         }
+    }
+}
+
+// Breakpoint 1024px 
+@media (max-width: $desktop-s) {
+    .BookingContainer {
+        padding-top: 30px;
+        gap: 40px;
+
+        .BookingContent {
+            gap: 50px;
+
+            .HotelInfo {
+                .HotelImage>img {
+                    max-width: 350px;
+                }
+
+                .HotelTitle {
+                    align-items: flex-start;
+                    gap: 5px;
+
+                    .HotelName {
+                        font-size: $fnt-size-l;
+                    }
+
+                    .HotelLocation {
+                        font-size: $fnt-size-s;
+                    }
+                }
+            }
+
+            .Divider {
+                height: auto;
+            }
+        }
+
+        .BookingButtons {
+            gap: 15px;
+
+            .BookBtn,
+            .CancelBtn {
+                width: 280px;
+                font-size: $fnt-size-xl;
+            }
+        }
+    }
+}
+
+// Breakpoint 768px 
+@media (max-width: $tablet-m) {
+    .BookingContainer {
+        padding-top: 20px;
+        gap: 30px;
+
+        .BookingContent {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+
+            .Divider {
+                width: 80%;
+                height: 1px;
+                transform: rotate(0deg);
+            }
+
+            .HotelInfo {
+                .HotelImage>img {
+                    max-width: 750px;
+                }
+            }
+        }
+
+        .BookingButtons {
+            width: 100%;
+            max-width: 468px;
+            .BookBtn,
+            .CancelBtn {
+                width: 100%;
+                font-size: $fnt-size-md;
+            }
+        }
+    }
+}
+
+// Breakpoint 490px 
+@media (max-width: 490px) {
+    .BookingContainer {
+        padding-top: 15px;
+        gap: 20px;
+
+        .BookingContent {
+            gap: 20px;
+
+            .HotelInfo {
+                .HotelImage>img {
+                    max-width: 100%;
+                }
+
+                .HotelTitle {
+                    .HotelName {
+                        font-size: $fnt-size-s;
+                    }
+
+                    .HotelLocation {
+                        font-size: $fnt-size-2xs;
+                    }
+                }
+            }
+
+            .Divider {
+                display: none; // Küçük ekranlarda dikey çizgi gereksiz
+            }
+        }
+
+        .BookingButtons {
+            gap: 10px;
+            width: 100%;
+            max-width: 380px;
+        }
+    }
+}
+// Breakpoint 390px 
+@media (max-width: 390px) {
+    .BookingContainer {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .BookingContent{
+            .HotelInfo{
+                .HotelTitle {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        .TitlePart {
+            .Title {
+                font-size: $fnt-size-2xl; 
+                text-align: center; 
+                word-break: break-word; 
+            }
+
+            .Text {
+                font-size: $fnt-size-md; 
+                text-align: center;
+            }
+        }
+
+        .BookingContent {
+            gap: 15px; 
+        }
+    }
+}
+// Breakpoint 320px 
+@media (max-width: 320px) {
+    .BookingContainer {
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
