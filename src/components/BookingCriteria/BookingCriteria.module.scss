@@ -121,27 +121,27 @@
         }
     }
 }
+
 @media (max-width: 390px) {
   .booking-criteria {
-    padding: 5px; /* Daha minimal padding */
+    padding: 5px; 
   }
 
   .booking-criteria__button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px 10px; /* Yukarı-aşağı dengeli */
-    line-height: 1.2; /* Metni dikeyde ortala */
-    font-size: 0.85rem; /* Küçültülmüş yazı */
+    padding: 6px 10px; 
+    line-height: 1.2;  
+    font-size: 0.85rem; 
   }
 
   .price-info {
-    font-size: 0.9rem; /* Daha küçük fiyat yazısı */
+    font-size: 0.9rem; 
     line-height: 1.4;
     text-align: center;
   }
 
-  /* Takvimlerin küçük ekranda alt alta gelmesi */
   .calendar-container {
     display: flex;
     flex-direction: column !important;
