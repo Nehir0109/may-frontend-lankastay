@@ -1,0 +1,175 @@
+@use '@/styles/index.scss' as *;
+
+.bookingCriteria {
+    font-family: $primary-font;
+    color: $title;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .label {
+        font-size: $fnt-size-md;
+        font-weight: 400;
+        line-height: 170%;
+    }
+
+    .durationPart,
+    .datePart {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .durationControl {
+        background-color: $copyrightBg;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.125rem;
+        border-radius: 4px;
+        width: 320px;
+        height: 45px;
+
+        .btnMinus,
+        .btnPlus {
+            color: $white;
+            padding: 21px 17px;
+            font-size: $fnt-size-3xl;
+            font-weight: bold;
+            gap: 10px;
+            height: 45px;
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        .btnMinus {
+            background-color: $red;
+        }
+
+        .btnPlus {
+            background-color: $green;
+        }
+
+        .durationText {
+            font-size: $fnt-size-md;
+            font-weight: 400;
+        }
+    }
+
+    .dateDisplay {
+        display: flex;
+        align-items: center;
+        background-color: $copyrightBg;
+        width: 100%;
+        max-width: 320px;
+        height: 45px;
+        border-radius: 4px;
+        gap: 30px;
+        cursor: pointer;
+        text-align: center;
+
+        .calendarWrapper {
+            width: 45px;
+            height: 45px;
+            border-radius: 4px;
+            background-color: #152C5B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .calendarIcon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .dateText {
+            font-size: $fnt-size-md;
+            font-weight: 400;
+            text-align: center;
+        }
+    }
+
+    .dateInputs {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+
+        input {
+            flex: 1;
+            font-size: $fnt-size-md;
+            padding: 0.5rem;
+            border: 1px solid $border;
+            border-radius: 4px;
+        }
+    }
+
+    .priceInfo {
+        font-family: $primary-font;
+        font-size: $fnt-size-2xl;
+        font-weight: 300;
+        color: #B0B0B0;
+        line-height: 170%;
+
+        .price {
+            font-weight: 500;
+            color: #152C5B;
+        }
+    }
+}
+
+@media (max-width: 390px) {
+  .booking-criteria {
+    padding: 5px; 
+  }
+
+  .booking-criteria__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px; 
+    line-height: 1.2;  
+    font-size: 0.85rem; 
+  }
+
+  .price-info {
+    font-size: 0.9rem; 
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .calendar-container {
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .calendar-container .calendar {
+    width: 100% !important;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 320px) {
+  .booking-criteria {
+    padding: 4px;
+  }
+
+  .booking-criteria__button {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  .price-info {
+    font-size: 0.85rem;
+  }
+
+  .calendar-container {
+    gap: 6px;
+  }
+}

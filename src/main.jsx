@@ -1,9 +1,10 @@
-import React, { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import "./styles/global.scss";
 import "react-loading-skeleton/dist/skeleton.css";
 import VerifiedScreen from "./components/VerifiedScreen/VerifiedScreen";
+import BookingPage from "./pages/BookingPage/Booking";
 import LoginForm from "./components/LoginForm/LoginForm.jsx";
 import Home from "./pages/Home/index.jsx";
 
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     Component: Home,
+  },
+  {
+    path: "/booking/:id",
+    Component: BookingPage,
   },
   {
     path: "/login",
